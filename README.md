@@ -1,73 +1,51 @@
-# React + TypeScript + Vite
+# Sentura Technologies - Internship Practical Test 2026
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![Application Screenshot](./src/assets/countries.png)
 
-Currently, two official plugins are available:
+## 📌 Project Overview
+A Full-Stack Country Information System built within a **40-minute time limit** for the Sentura Technologies internship technical assessment.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The system features a **Spring Boot** backend that fetches data from the RestCountries API with integrated caching, and a **React (TypeScript)** frontend for data visualization.
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🚀 Key Technical Features
 
-## Expanding the ESLint configuration
+### 1. Backend (Java - Spring Boot)
+* **External API Integration**: Successfully connects to `restcountries.com`.
+* **Data Optimization**: Implemented strict field filtering to return only: `Name`, `Capital`, `Region`, `Population`, and `Flag`.
+* **10-Minute In-Memory Cache**: To prevent redundant API calls and optimize performance, the system refreshes data only after a 10-minute window or upon initial load.
+* **CORS Configuration**: Securely enabled for communication with the Vite frontend.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### 2. Frontend (React + TypeScript + Vite)
+* **Type-Safe Components**: Used TypeScript interfaces for robust data handling.
+* [cite_start]**Real-time Search**: Instant filtering of the country table via user input.
+* [cite_start]**Interactive Modal**: Detailed view popup triggered by clicking any row in the table.
+* **Custom Styling**: Clean, responsive UI built with custom CSS.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## 🛠️ Tech Stack
+* **Frontend**: React 18, TypeScript, Vite
+* **Backend**: Java 17, Spring Boot 3.x, Maven
+* [cite_start]**API**: [RestCountries API](https://restcountries.com/)
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+---
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🏃 How to Run
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### Backend
+1. Navigate to the `backend` folder.
+2. Run `./mvnw spring-boot:run` or use your IDE.
+3. Access at: `http://localhost:8080`
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### Frontend
+1. Navigate to the `frontend` folder.
+2. Run `npm install` then `npm run dev`.
+3. Access at: `http://localhost:5173`
+
+---
+
+## 📝 Performance Notes
+- **Completion Time**: Successfully developed and documented within the allocated **40-minute** window.
+- **Industry Practices**: Followed Conventional Commits, Constructor Injection in Spring, and Modular Component Design in React.
